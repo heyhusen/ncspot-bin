@@ -82,7 +82,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     outputs:
-      version: ${{ needs.build.build.version }}
+      version: ${{ needs.build.outputs.version }}
     
     steps:
       - name: Checkout
