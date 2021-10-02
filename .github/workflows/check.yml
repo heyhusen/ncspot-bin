@@ -24,7 +24,7 @@ jobs:
       - name: Find version on PKGBUILD
         id: search-version
         run: |
-          if grep -q "${{ steps.get-version.outputs.version }}" PKGBUILD
+          if grep -Fq "${{ steps.get-version.outputs.version }}" PKGBUILD
           then
             echo "::set-output name=found::true"
           else
